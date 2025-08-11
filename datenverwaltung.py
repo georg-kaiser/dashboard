@@ -103,7 +103,7 @@ def studiengang_laden():
 
 
 
-class NutzerInput:
+class Nutzereingabe:
     def __init__(self, modulname_wert, modulnummer_wert, semester_wert, pruefungsart_wert, ects_wert, note_wert):
         self.modulname_wert = modulname_wert, 
         self.modulnummer_wert = modulnummer_wert,

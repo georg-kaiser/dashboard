@@ -20,7 +20,7 @@ def modul_hinzufügen():
 
 studiengang_abfragen()
 
-beste_note = 1
+beste_note = [1]
 col1, col2, col3, col4 = st.columns(4)
 
 with col1.container(border=True):
