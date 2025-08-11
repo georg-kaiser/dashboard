@@ -70,7 +70,7 @@ class Datenspeicherung:
                 print(liste)
             for sem in liste:
                 if sem["nummer"] == semester.nummer:
-                    sem["module"].append(int(semester.module))
+                    sem["module"].append(semester.module)
                 print(sem)
             with open('semester.json', 'w', encoding='utf-8') as file:
                 json.dump(liste, file, ensure_ascii=False, indent=4)
@@ -96,12 +96,6 @@ class Datenspeicherung:
     
 
 
-def studiengang_laden():
-    with open('studiengang.json', 'r', encoding='utf-8') as datei:
-        studiengang_daten = json.load(datei)
-    return Studiengang(**studiengang_daten)
-
-
 
 class Nutzereingabe:
     def __init__(self, modulname_wert, modulnummer_wert, semester_wert, pruefungsart_wert, ects_wert, note_wert):
@@ -117,14 +111,71 @@ class Nutzereingabe:
         neues_modul = Modul(nummer=modulnummer_wert, name=modulname_wert, pruefungsleistung=neue_pruefungsleistung.id, ects=ects_wert)
         Datenspeicherung(neues_modul)
         neues_semester = Semester(semester_wert, modulnummer_wert)
+        beste_note = self.beste_note_finden()
+        print("Break 1")
+        if beste_note:
+                print("Break 2")
+                aktueller_studiengang = Datenzugriff().studiengang_ausgeben()
+                aktueller_studiengang.beste_note = note_wert
+                Datenspeicherung(aktueller_studiengang)
+        print("Break 3")
+        print(beste_note)
         Datenspeicherung(neues_semester)
 
         print("Gespeichtert!")
+
+
+    def beste_note_finden(self):
+        print("break4")
+        try:
+            with open('pruefungsleistungen.json', 'r', encoding='utf-8') as pruefungen:
+                pruefungsliste = json.load(pruefungen)
+                print(pruefungsliste)
+                beste_pruefung = pruefungsliste[0]
+            for pruefung in pruefungsliste:
+                if pruefung["note"] <= beste_pruefung["note"]:
+                    beste_pruefung = pruefung
+                print(pruefung)
+            if beste_pruefung["note"] == self.note_wert:
+                print(beste_pruefung)
+                print("True")
+                return True
+            else:
+                print(beste_pruefung)
+                print("False")
+                return False
+        except (FileNotFoundError, json.JSONDecodeError):
+            return True
+ 
+    def passendes_modul_finden(self,beste_pruefung):
+        try:
+            with open('module.json', 'r', encoding='utf-8') as module:
+                modulliste = json.load(module)
+                print(modulliste)
+            for modul in modulliste:
+                if modul["pruefungsleistung"] == beste_pruefung["id"]:
+                    print(modul["name"])
+                    return modul["name"]
+                
+        except(FileNotFoundError, json.JSONDecodeError):
+            return "-"
+    
+
+
+        
         
 
 class Datenzugriff:
     def __init__(self):
         pass
+
+    def studiengang_ausgeben(self):
+        try:
+            with open('studiengang.json', 'r', encoding='utf-8') as datei:
+                studiengang_daten = json.load(datei)
+            return Studiengang(**studiengang_daten)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return Studiengang()
 
     def schlechteste_note_finden(self):
         pass

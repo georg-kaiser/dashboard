@@ -20,15 +20,15 @@ class Modul:
 @dataclass
 class Semester:
     nummer: int
-    module: list[int] = field(default_factory=list)
+    module: list[str] = field(default_factory=list)
     ects_semester: int = 0
 
 @dataclass
 class Studiengang:
-    bezeichnung: str
-    student: str
+    bezeichnung: str = "Angewandte Künstliche Intelligenz"
+    student: str = "Georg Kaiser"
     semester_liste: list[int] = field(default_factory=list)
     ects_gesamt: int = 0
-    notenduchschnitt_gesamt: float = 1.0
-    beste_note: float = 1.0
-    schlechteste_note: float = 1.0
+    notenduchschnitt_gesamt: float = 5.0
+    beste_note: float = 5.0
+    schlechteste_note: float = 5.0
