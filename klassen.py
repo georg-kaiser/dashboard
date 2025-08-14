@@ -41,11 +41,11 @@ class Studiengang:
     '''
         Die Datenklasse Studiengang enthält die Bezeichnung des Studiengangs, den Namen des Studenten, 
         eine Liste an Semesternummern (Aggregation), die insgesamt erreichten ECTS, den Notendurchschnitt, 
-        Informationen über Note, Namen und Pruefungsart des besten Moduls  
-        und Note, Namen und Pruefungsart des schlechtesten Moduls.
+        Informationen über Note, Namen und Pruefungsart des besten Module  
+        und Note, Namen und Pruefungsart des schlechtesten Module.
     '''
     bezeichnung: str = "Angewandte Künstliche Intelligenz" #Standardwert, falls der Nutzer ncihts angibt.
-    student: str = "Georg Kaiser" #Standardwert, falls der Nutzer ncihts angibt.
+    student: str = "Georg Kaiser" #Standardwert, falls der Nutzer nichts angibt.
     semester_liste: list[int] = field(default_factory=list)
     ects_gesamt: int = 0
     notenduchschnitt_gesamt: float = 0.0
