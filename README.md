@@ -8,8 +8,8 @@
 ### Schritte
 1. Repository klonen:
    ```bash
-   git clone https://github.com/dein-benutzername/mein-projekt.git
-   cd mein-projekt
+  git clone https://github.com/dein-benutzername/mein-projekt.git
+   cd dashboard
    ```
 
 2. Virtuelle Umgebung erstellen und aktivieren:
