@@ -1,14 +1,12 @@
-#Dashbaord-Protyp mit grafischer Benutzeroberfläche
-
-## Installation
+## Dashbaord-Protyp mit grafischer Benutzeroberfläche
 
 ### Voraussetzungen
 - Python 3.13.6 oder neuer
 
-### Schritte
+### Anleitung
 1. Repository klonen:
    ```bash
-  git clone https://github.com/dein-benutzername/mein-projekt.git
+   git clone https://github.com/georg-kaiser/dashboard.git
    cd dashboard
    ```
 
@@ -26,4 +24,9 @@
 3. Abhängigkeiten installieren:
    ```bash
    pip install -r requirements.txt
+   ```
+
+4. Progamm ausführen:
+   ```bash
+   streamlit run main.py
    ```
