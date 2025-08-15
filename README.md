@@ -7,6 +7,8 @@
 1. Repository klonen:
    ```bash
    git clone https://github.com/georg-kaiser/dashboard.git
+   ```
+   ```bash
    cd dashboard
    ```
 
@@ -15,7 +17,8 @@
    # Linux/Mac
    python -m venv venv
    source venv/bin/activate
-   
+   ```
+   ```bash
    # Windows
    python -m venv venv
    .\venv\Scripts\activate
