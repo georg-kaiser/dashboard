@@ -4,13 +4,13 @@
 - Python 3.13.6 oder neuer
 
 ## Anleitung
-### 1. Repository klonen:
+1. Repository klonen:
    ```bash
    git clone https://github.com/georg-kaiser/dashboard.git
    cd dashboard
    ```
 
-### 2. Virtuelle Umgebung erstellen und aktivieren:
+2. Virtuelle Umgebung erstellen und aktivieren:
     ```bash
    # Windows
    python -m venv venv
@@ -22,13 +22,13 @@
    source venv/bin/activate
    ```
 
-### 3. Abhängigkeiten installieren:
+3. Abhängigkeiten installieren:
    ```bash
    pip install -r requirements.txt
    ```
    Besonderheit: Streamlit installiert automatisch Numpy und Pandas, deshalb ist es best-practice, diese ebenfalls in der requirements.txt-Datei anzugeben.
 
-### 4. Progamm ausführen:
+4. Progamm ausführen:
    ```bash
    streamlit run main.py
    ```
