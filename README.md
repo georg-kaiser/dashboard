@@ -7,8 +7,6 @@
 1. Repository klonen:
    ```bash
    git clone https://github.com/georg-kaiser/dashboard.git
-   ```
-   ```bash
    cd dashboard
    ```
 
