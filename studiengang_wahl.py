@@ -11,7 +11,7 @@ st.header("Bitte Studiengang angeben")
 #Erstellt ein Formular, in dem der Nutzer seinen Studiengang und seinen Namen angibt
 with st.form("Studiengang"):    
     neue_bezeichnung = st.text_input("Studiengang Bezeichnung")
-    neuer_student = st.text_input("Name Studnet")
+    neuer_student = st.text_input("Name Student")
 
     #Um das Formular einzureichen, gibt es eine Knopf
     submitted = st.form_submit_button("Studiengang festlegen")  
