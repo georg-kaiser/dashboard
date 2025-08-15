@@ -26,6 +26,7 @@
    ```bash
    pip install -r requirements.txt
    ```
+   Besonderheit: Streamlit installiert automatisch Numpy und Pandas, deshalb ist es best-practice, diese ebenfalls in der requirements.txt-Datei anzugeben.
 
 4. Progamm ausführen:
    ```bash
