@@ -8,6 +8,7 @@ class Datenspeicherung:
     '''
         Die Klasse übernimmt die automatische Speicherung von Datenobjekten, die sie übergeben bekommt.
     '''
+
     def __init__(self, datenobjekt):
         '''
             Bei der Initalisierung wird ein Datenobjekt übergeben. Es wird überprüft, zu welcher Klasse dieses Objekt gehört und danach entsprechend abgespeichert.
@@ -91,6 +92,7 @@ class Datenspeicherung:
                 json.dump(semster_liste, file, ensure_ascii=False, indent=4)
             self.semester_speichern(semester)
     
+
     def studiengang_speichern(self, studiengang):
         '''
             Diese Methode speichert den Studiengang in eine 'studiengang.json'-Datei ab.
@@ -104,16 +106,18 @@ class Datenspeicherung:
 
 class Nutzereingabe:
     '''
-        Diese Klasse erhält der Daten aus der Nutzereingabe im Dashboard. Danach speichert sie die Daten ab 
-        und erstellt alle nötigen objektrationalen Verbindungen zwischen den Datenkalssen.
+        Diese Klasse erhält der Daten aus der Nutzereingabe in der grafischen Benutzeroberfläche.
+        Es werden neue Datenkalssen-Objekte basierend auf den Daten erstellt. Anschließend werden die Objekte abgespeichert 
+        und alle nötigen objektrationalen Verbindungen erstellt.
         Erhaltene Daten: Modulname, Modulnummer, Semesternummer, Pruefungsart, ECTS und Note
     '''
+
     def __init__(self, modulname_wert, modulnummer_wert, semester_wert, pruefungsart_wert, ects_wert, note_wert):
         '''
-            Bei der Initialiserung werden mit Hilfe der übergebenen Daten neue Datenobjekte erstellt und abgespeichert.
-            Anschließend werden die neune Objekte abgespeichert.
-            Zusätzlich wird überprüft ob es sich bei dem neuen Modul um die beste oder schlechteste Note handelt und rechnet den Notendurshcschnitt aus.
-            Diese Informationene werden dann ebenfalls gespeichert.
+            Bei der Initialiserung werden mit Hilfe der übergebenen Daten neue Datenklassen-objekte erstellt.
+            Anschließend werden die neuen Objekte abgespeichert.
+            Zusätzlich wird überprüft, ob es sich bei dem neuen Modul um die beste oder schlechteste Note handelt und es wird der Notendurchcschnitt aktualisiert.
+            Diese Informationene werden dann ebenfalls gespeichert. Dieses Vorgehen verbessert die Effizenz des Programms.
         '''
         self.modulname_wert = modulname_wert, 
         self.modulnummer_wert = modulnummer_wert,
@@ -218,6 +222,7 @@ class Datenzugriff:
         Diese Klasse lässt das Dashboard auf die bereits in den JSON-Datein gespeicherten Daten zugreifen.
         Dabei wird von außen auf die jeweiligen Methoden zugegriffen.
     '''
+
     def __init__(self):
         pass
 
@@ -233,6 +238,7 @@ class Datenzugriff:
             return Studiengang(**studiengang_daten)
         except (FileNotFoundError, json.JSONDecodeError):
             return Studiengang()
+        
         
     def ects_semeseter_ausgeben(self):
         '''

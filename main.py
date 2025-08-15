@@ -2,6 +2,7 @@ import streamlit as st
 import os
 
 
+
 #Konfigueiert die Website
 st.set_page_config(
     layout="centered",
@@ -12,7 +13,7 @@ st.set_page_config(
 #Überprüft, ob bereits ein Studiengang exisitert oder ob der Nutzer das Programm zum ersten Mal ausführt.
 if os.path.exists('studiengang.json'):
     pg = st.navigation([
-        st.Page("dashboard.py"), #Studiengang existiert, Nutzer wird direkt an Dashboard weitergeleitet
+        st.Page("dashboard.py"), #Studiengang existiert bereits, Nutzer wird direkt ans Dashboard weitergeleitet
         st.Page("studiengang_wahl.py"),
         ],
         position="hidden"

@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
 import uuid
 
+
+
 def uuid_generieren() -> str:
     '''
         Generiert eine eindeutige ID für jede Prüfungsleistung.

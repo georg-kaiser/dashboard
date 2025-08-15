@@ -3,8 +3,10 @@ from klassen import Studiengang
 from datenverwaltung import Datenspeicherung
 
 
+
 #Überschrift
 st.header("Bitte Studiengang angeben")  
+
 
 #Erstellt ein Formular, in dem der Nutzer seinen Studiengang und seinen Namen angibt
 with st.form("Studiengang"):    

@@ -2,6 +2,8 @@ import streamlit as st
 from datenverwaltung import Nutzereingabe, Datenzugriff
 import pandas as pd
 
+
+
 #Der akutelle Studiengang wird abgerufen
 aktueller_studiengang = Datenzugriff().studiengang_ausgeben()
 
